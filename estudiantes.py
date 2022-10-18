@@ -28,13 +28,13 @@ class Estudiantes(object):
 
 def registrarEstudiante():
     print("Registro de Estudiantes\n")
-    cedula = int(raw_input("Ingrese el numero de cedula: "))
-    nombre = raw_input("Ingrese el nombre: ")
-    apellido = raw_input("Ingrese el apellido: ")
-    edad = int(raw_input("Ingrese su edad: "))
-    nota1 = float(raw_input("Ingrese nota 1: "))
-    nota2 = float(raw_input("Ingrese nota 2: "))
-    nota3 = float(raw_input("Ingrese nota 3: "))
+    cedula = int(input("Ingrese el numero de cedula: "))
+    nombre = input("Ingrese el nombre: ")
+    apellido = input("Ingrese el apellido: ")
+    edad = int(input("Ingrese su edad: "))
+    nota1 = float(input("Ingrese nota 1: "))
+    nota2 = float(input("Ingrese nota 2: "))
+    nota3 = float(input("Ingrese nota 3: "))
     objAlumno = Estudiantes(cedula, nombre, apellido, edad, nota1, nota2, nota3)
     listaEstudiantes.append(objAlumno)
 
@@ -45,19 +45,19 @@ def listadoEstudiantes():
 
 def buscarEstudiante():
     print("Buscar Estudiante\n")
-    cedula = int(raw_input("Ingrese el numero de cedula a buscar: "))
+    cedula = int(input("Ingrese el numero de cedula a buscar: "))
     for objAlumno in listaEstudiantes:
         if cedula == objAlumno.cedula:
             objAlumno.entregarDatos()
 
 def modificarNotas():
     print("Modificar Notas\n")
-    cedula = int(raw_input("Ingrese el numero de cedula a buscar: "))
+    cedula = int(input("Ingrese el numero de cedula a buscar: "))
     for objAlumno in listaEstudiantes:
         if cedula == objAlumno.cedula:
-            nota1 = float(raw_input("Ingrese nota 1: "))
-            nota2 = float(raw_input("Ingrese nota 2: "))
-            nota3 = float(raw_input("Ingrese nota 3: ")) 
+            nota1 = float(input("Ingrese nota 1: "))
+            nota2 = float(input("Ingrese nota 2: "))
+            nota3 = float(input("Ingrese nota 3: "))
             objAlumno.editarNotas(nota1, nota2, nota3)
             objAlumno.entregarDatos()
             recepcionMensaje = objAlumno.incluirEvento(nota1, nota2, nota3)
@@ -65,7 +65,7 @@ def modificarNotas():
 
 def consultarHistorial():
     print("Consulta de Historial\n")
-    cedula = int(raw_input("Ingrese el numero de cedula a buscar: "))
+    cedula = int(input("Ingrese el numero de cedula a buscar: "))
     for objAlumno in listaEstudiantes:
         if cedula == objAlumno.cedula:
             for recepcionMensaje in objAlumno.historial:
@@ -91,7 +91,7 @@ def main():
         print("5.- Consultar Historial")
         print("6.- Salir\n")
 
-        opcion = int(raw_input("Opcion: "))
+        opcion = int(input("Opcion: "))
 
         if opcion == 1:
             registrarEstudiante()
